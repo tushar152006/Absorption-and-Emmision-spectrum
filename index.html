@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Absorption and Emission Spectra</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js Library -->
 </head>
 <body>
     <header>
@@ -12,56 +13,40 @@
         <nav>
             <ul>
                 <li><a href="#intro">Introduction</a></li>
-                <li><a href="#calculator">Formula Calculator</a></li>
-                <li><a href="#code">Code Execution</a></li>
+                <li><a href="#calculator">Energy Calculator</a></li>
+                <li><a href="#graphs">Spectra Visualization</a></li>
                 <li><a href="#resources">Resources</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <!-- Introduction Section -->
         <section id="intro">
             <h2>Introduction</h2>
-            <p>The absorption spectrum occurs when light is absorbed by matter at specific wavelengths. The emission spectrum is observed when matter emits light at characteristic wavelengths. These phenomena are fundamental in physics and chemistry.</p>
+            <p>The absorption spectrum occurs when light is absorbed by matter at specific wavelengths, while the emission spectrum is the opposite phenomenon where matter emits light. These spectra are critical for understanding the interaction between light and matter.</p>
         </section>
+
+        <!-- Energy Calculator Section -->
         <section id="calculator">
-            <h2>Formula Calculator</h2>
-            <p>Use the formula \( E = h \nu = \frac{hc}{\lambda} \) to calculate the energy of a photon.</p>
+            <h2>Energy Calculator</h2>
+            <p>Calculate energy using the formula \( E = h \nu = \frac{hc}{\lambda} \):</p>
             <form id="energyCalculator">
                 <label for="wavelength">Wavelength (\( \lambda \)) in nm:</label>
                 <input type="number" id="wavelength" name="wavelength" step="0.1" required>
-                <label for="frequency">Frequency (\( \nu \)) in Hz (optional):</label>
-                <input type="number" id="frequency" name="frequency" step="0.1">
                 <button type="button" onclick="calculateEnergy()">Calculate Energy</button>
             </form>
             <p id="result"></p>
         </section>
-        <section id="code">
-            <h2>Code Execution</h2>
-            <p>Below is an example Python code for the formula:</p>
-            <pre>
-import math
 
-# Constants
-h = 6.626e-34  # Planck's constant in Js
-c = 3e8        # Speed of light in m/s
-
-# Input wavelength in nm
-wavelength_nm = float(input("Enter wavelength (in nm): "))
-wavelength_m = wavelength_nm * 1e-9
-
-# Calculate energy
-energy = (h * c) / wavelength_m
-print(f"Energy: {energy} J")
-            </pre>
-            <p>To execute this code:</p>
-            <ul>
-                <li>Copy the code into a Python editor or IDE.</li>
-                <li>Run the code and input a wavelength when prompted.</li>
-            </ul>
+        <!-- Graph Visualization Section -->
+        <section id="graphs">
+            <h2>Spectra Visualization</h2>
+            <canvas id="spectrumChart" width="400" height="200"></canvas>
         </section>
+
+        <!-- Resources Section -->
         <section id="resources">
             <h2>Resources</h2>
-            <p>Explore more about absorption and emission spectra:</p>
             <ul>
                 <li><a href="https://en.wikipedia.org/wiki/Absorption_spectrum" target="_blank">Absorption Spectrum - Wikipedia</a></li>
                 <li><a href="https://en.wikipedia.org/wiki/Emission_spectrum" target="_blank">Emission Spectrum - Wikipedia</a></li>
